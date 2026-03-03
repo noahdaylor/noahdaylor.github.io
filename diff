@@ -3,7 +3,7 @@ index.html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Name</title>
+    <title>Noah Daylor</title>
     <style>
         body {
             font-family: Arial;
@@ -17,8 +17,8 @@ index.html
     </style>
 </head>
 <body>
-    <h1>Your Name</h1>
-    <p>Welcome to my portfolio.</p>
+    <h1>Noah Daylor</h1>
+    <p>Welcome to my portfolio! This is Noah!</p>
 
     <h2>Projects</h2>
     <ul>
