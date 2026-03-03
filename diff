@@ -1,2 +1,33 @@
 index.html
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Name</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 700px;
+            margin: 50px auto;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Name</h1>
+    <p>Welcome to my portfolio.</p>
+
+    <h2>Projects</h2>
+    <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>email@example.com</p>
+</body>
+</html>
+
