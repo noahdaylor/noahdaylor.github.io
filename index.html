@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Daylor</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #f7f5f2;
+            --text: #1a1a1a;
+            --muted: #888;
+            --accent: #c8a96e;
+            --border: #e2ddd8;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            padding: 36px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .nav-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 96px 0 80px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.6rem, 6vw, 3.8rem);
+            line-height: 1.15;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #555;
+            max-width: 460px;
+            line-height: 1.75;
+        }
+
+        /* Sections */
+        section {
+            padding: 64px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--muted);
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Projects */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s;
+            cursor: default;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-item:hover .project-title {
+            color: var(--accent);
+        }
+
+        .project-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 6px;
+            transition: color 0.2s;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+            max-width: 400px;
+        }
+
+        .project-tag {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-top: 4px;
+            white-space: nowrap;
+        }
+
+        /* Contact */
+        .contact-row {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+        }
+
+        .contact-value a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .contact-value a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .footer-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-label  { animation: fadeUp 0.5s ease both; animation-delay: 0.05s; }
+        .hero h1     { animation: fadeUp 0.6s ease both; animation-delay: 0.15s; }
+        .hero p      { animation: fadeUp 0.6s ease both; animation-delay: 0.28s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <nav>
+            <span class="nav-name">Noah Daylor</span>
+            <ul class="nav-links">
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero -->
+        <div class="hero">
+            <p class="hero-label">Portfolio</p>
+            <h1>Hello, I'm<br><em>Noah Daylor.</em></h1>
+            <p>Welcome to my portfolio. I build things and solve problems — here's a look at what I've been working on.</p>
+        </div>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="section-header">
+                <span class="section-label">Selected Work</span>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-list">
+                <div class="project-item">
+                    <div>
+                        <div class="project-title">Project 1</div>
+                        <div class="project-desc">A short description of what this project is and what you built or accomplished.</div>
+                    </div>
+                    <span class="project-tag">Type</span>
+                </div>
+                <div class="project-item">
+                    <div>
+                        <div class="project-title">Project 2</div>
+                        <div class="project-desc">A short description of what this project is and what you built or accomplished.</div>
+                    </div>
+                    <span class="project-tag">Type</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="section-header">
+                <span class="section-label">Get in Touch</span>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-row">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value"><a href="mailto:noah@noahdaylor.com">noah@noahdaylor.com</a></span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span class="footer-copy">© 2026 Noah Daylor</span>
+            <div class="footer-dot"></div>
+        </footer>
+
+    </div>
+</body>
+</html>
